@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import TodoIList from './TodoList';
+import Input from './Input';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    todoItems: [
+      {id: 1},
+      {id: 2, checked: true, task: 'Watch react lection #2'},
+      {id: 3, task: 'Buy milk'}
+    ]
+  }
+
+  toggleTodoItem = (index) => {
+    const { todoItems } = this.state;
+    const todoItem = todoItems[index - 1];
+    todoItem.checked = !todoItem.checked;
+    this.setState({todoItems});
+  };
+
+  addTodoItem = (text) => {
+    const { todoItems } = this.state;
+    this.setState( {todoItems: [...todoItems, {id: todoItems.length, checked: false, task: text}]})
+  }
+
+  render() {
+    const { todoItems } = this.state;
+
+    return (
+      <>
+        <Input addTodoItem = { this.addTodoItem }/>
+        <TodoIList todoItems={todoItems} toggleTodoItem = { this.toggleTodoItem }/>
+      </>
+    )}
 }
 
 export default App;
