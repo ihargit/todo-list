@@ -5,15 +5,15 @@ import Input from './Input';
 class App extends Component {
   state = {
     todoItems: [
-      {id: 1},
-      {id: 2, checked: true, task: 'Watch react lection #2'},
-      {id: 3, task: 'Buy milk'}
+      {id: 0},
+      {id: 1, checked: true, task: 'Watch react lection #2'},
+      {id: 2, task: 'Buy milk'}
     ]
   }
 
   toggleTodoItem = (index) => {
     const { todoItems } = this.state;
-    const todoItem = todoItems[index - 1];
+    const todoItem = todoItems[index];
     todoItem.checked = !todoItem.checked;
     this.setState({todoItems});
   };
