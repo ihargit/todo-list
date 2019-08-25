@@ -1,6 +1,6 @@
 # Simple TODO app with react
 
-## Demo: https://ihargit.github.io/todo-list
+## Demo: https://ihargit.github.io/todo-list/
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
