@@ -1,4 +1,4 @@
-# Simple TODO app with react
+# Simple TODO app with React.js
 
 ## Demo: https://ihargit.github.io/todo-list/
 
